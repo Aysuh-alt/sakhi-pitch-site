@@ -8,6 +8,7 @@ import Traction from "@/components/Traction";
 import Investment from "@/components/Investment";
 import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   useEffect(() => {
@@ -53,6 +54,7 @@ const Index = () => {
         </div>
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
