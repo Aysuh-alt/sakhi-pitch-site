@@ -9,13 +9,13 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 270 15% 15%;
+    --foreground: 0 0% 20%;  /* Dark gray #333333 for better readability */
 
     --card: 0 0% 100%;
-    --card-foreground: 270 15% 15%;
+    --card-foreground: 0 0% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 270 15% 15%;
+    --popover-foreground: 0 0% 20%;
 
     /* MySAKHi Brand Colors */
     --primary: 351 100% 86%;  /* Soft Pink */
@@ -31,7 +31,7 @@ All colors MUST be HSL.
     --golden-foreground: 0 0% 100%;
 
     --muted: 270 20% 95%;
-    --muted-foreground: 270 10% 45%;
+    --muted-foreground: 0 0% 30%;  /* Darker for better contrast */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -129,21 +129,21 @@ All colors MUST be HSL.
 
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.5s ease-out forwards;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
+    animation: slideUp 0.5s ease-out forwards;
   }
 
   .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
+    animation: scaleIn 0.4s ease-out forwards;
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -180,5 +180,18 @@ All colors MUST be HSL.
   .hover-lift:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
+  }
+
+  /* Focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px hsla(var(--ring), 0.2);
   }
 }
