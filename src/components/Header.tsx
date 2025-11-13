@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import WaitlistModal from "@/components/WaitlistModal";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,10 +68,11 @@ const Header = () => {
             <Button
               variant="golden"
               size="default"
-              onClick={() => scrollToSection("waitlist")}
+              onClick={() => setIsModalOpen(true)}
             >
               Join Waitlist
             </Button>
+            <WaitlistModal open={isModalOpen} onOpenChange={setIsModalOpen} />
           </div>
 
           {/* Mobile Menu Button */}
@@ -100,12 +103,16 @@ const Header = () => {
                   variant="golden"
                   size="default"
                   className="w-full"
-                  onClick={() => scrollToSection("waitlist")}
+                  onClick={() => {
+                    setIsModalOpen(true);
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   Join Waitlist
                 </Button>
               </div>
             </nav>
+            <WaitlistModal open={isModalOpen} onOpenChange={setIsModalOpen} />
           </div>
         )}
       </div>

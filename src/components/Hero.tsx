@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-women.jpg";
+import WaitlistModal from "@/components/WaitlistModal";
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -10,6 +11,7 @@ const Hero = () => {
     minutes: 0,
     seconds: 0,
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const targetDate = new Date();
@@ -124,6 +126,9 @@ const Hero = () => {
 
       {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      
+      {/* Waitlist Modal */}
+      <WaitlistModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 };
