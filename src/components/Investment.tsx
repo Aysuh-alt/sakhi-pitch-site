@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Target, DollarSign, Zap, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import WaitlistModal from "@/components/WaitlistModal";
 
 const Investment = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const reasons = [
     {
       icon: Target,
@@ -37,13 +41,6 @@ const Investment = () => {
     { category: "Marketing & Growth", amount: "₹7L", percentage: "23%" },
     { category: "Operations", amount: "₹5L", percentage: "17%" },
   ];
-
-  const scrollToWaitlist = () => {
-    const element = document.getElementById("waitlist");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section id="investment" className="py-16 sm:py-24 bg-muted/30">
@@ -143,7 +140,7 @@ const Investment = () => {
                 <Button
                   variant="golden"
                   size="lg"
-                  onClick={scrollToWaitlist}
+                  onClick={() => setIsModalOpen(true)}
                 >
                   Express Interest
                 </Button>
@@ -180,6 +177,9 @@ const Investment = () => {
           </div>
         </div>
       </div>
+      
+      {/* Waitlist Modal */}
+      <WaitlistModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 };
