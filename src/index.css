@@ -194,4 +194,18 @@ All colors MUST be HSL.
     outline-offset: 2px;
     box-shadow: 0 0 0 4px hsla(var(--ring), 0.2);
   }
+
+  /* WhatsApp icon pulse animation */
+  @keyframes whatsapp-pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-whatsapp-pulse {
+    animation: whatsapp-pulse 2.5s ease-in-out infinite;
+  }
 }
