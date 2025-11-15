@@ -9,6 +9,7 @@ import Investment from "@/components/Investment";
 import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import WhatsAppPopup from "@/components/WhatsAppPopup";
 
 const Index = () => {
   useEffect(() => {
@@ -55,6 +56,7 @@ const Index = () => {
       </main>
       <Footer />
       <ScrollToTop />
+      <WhatsAppPopup />
     </div>
   );
 };
