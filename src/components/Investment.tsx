@@ -31,7 +31,7 @@ const Investment = () => {
   ];
 
   const fundingDetails = [
-    { label: "Funding Ask", value: "₹30L", subtext: "Seed Round" },
+    { label: "Funding Ask", value: "₹50L", subtext: "Seed Round" },
     { label: "Timeline", value: "90 Days", subtext: "To 1K monthly rides" },
     { label: "Y1 Revenue", value: "₹15L+", subtext: "40-50% margins" },
   ];
