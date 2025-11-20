@@ -21,7 +21,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/mysakhi_hub", label: "Instagram" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
   ];
 
@@ -41,11 +41,11 @@ const Footer = () => {
               </p>
               <div className="space-y-3">
                 <a
-                  href="mailto:hello@mysakhi.in"
+                  href="mailto:mysakhi.team@gmail.com"
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base"
                 >
                   <Mail className="w-4 h-4" />
-                  hello@mysakhi.in
+                  mysakhi.team@gmail.com
                 </a>
                 <a
                   href="tel:+91"
